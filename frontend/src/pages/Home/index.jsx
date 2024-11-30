@@ -146,9 +146,9 @@ const handleChangeStatus = async (taskId, newStatus) => {
                     value={task.status}
                     onChange={(e) => handleChangeStatus(task.id, e.target.value)}
                   >
-                    <option value="pendente">pendente</option>
-                    <option value="em andamento">em andamento</option>
-                    <option value="concluída">concluída</option>
+                    <option value="pending">pending</option>
+                    <option value="in progress">in progress</option>
+                    <option value="completed">completed</option>
                   </select>
                 </td>
                 <td>

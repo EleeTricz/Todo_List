@@ -1,22 +1,20 @@
+---
 
+# Todo List Application - Full Stack (Back-End + Front-End)
 
-
-# Todo List API - Back End
-
-Welcome to the back end of the Todo List application, built using **Node.js**, **Express**, and **MySQL**. This API manages the creation, editing, deletion, and status updates of tasks.  
-
-The front-end integration is currently **in progress** and will be added in future updates.
+Welcome to the full-stack **Todo List Application**, built with **Node.js**, **Express**, **MySQL** (Back-End), and **React** (Front-End). This application allows users to manage tasks, including adding, editing, deleting, and updating their status.
 
 ---
 
 ## 📚 Project Overview
 
 ### Features
-- **Add Tasks:** Create new tasks via API.
-- **Edit Tasks:** Update task descriptions.
+- **Add Tasks:** Create new tasks via the front-end or API.
+- **Edit Tasks:** Update task descriptions and statuses.
 - **Delete Tasks:** Remove tasks from the database.
-- **Mark Complete:** Toggle task completion status.
-- **Persistent Storage:** Tasks are stored securely in a MySQL database.
+- **Task Status Management:** Mark tasks as "pending", "in progress", or "completed".
+- **Persistent Storage:** Tasks are stored in a MySQL database.
+- **Frontend Integration:** Built with React, displaying tasks dynamically and providing a user-friendly interface.
 
 ---
 
@@ -28,19 +26,24 @@ The front-end integration is currently **in progress** and will be added in futu
 
 ### Installation Steps
 
-1. **Clone the Repository**  
+#### 1. Clone the Repository  
+```bash
+git clone <repository-url>
+cd <repository-folder>
+```
+
+#### 2. Set Up the Back-End
+1. Go to the backend directory:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>/backend
+   cd backend
    ```
 
-2. **Install Dependencies**  
+2. Install the dependencies:
    ```bash
    npm install
    ```
 
-3. **Set Up Environment Variables**  
-   Create a `.env` file in the `backend` folder with the following content:
+3. Set up environment variables in the `backend/.env` file:
    ```env
    PORT=3306
    MYSQL_HOST=your_database_host
@@ -50,15 +53,30 @@ The front-end integration is currently **in progress** and will be added in futu
    ```
    Replace `your_database_host`, `your_database_username`, `your_database_password`, and `your_database_name` with your MySQL credentials.
 
-4. **Create the Database**  
-   Use the provided SQL script in the `backend/sql` folder (if available) to create the required database schema.
+4. Create the database schema (if not already created). Use the provided SQL script from the `backend/sql` folder.
 
-5. **Run the Server**  
-   Start the server with:
+5. Run the back-end server:
    ```bash
    npm start
    ```
-   The API will be running on `http://localhost:3306`.
+   The back-end API will be running on `http://localhost:3306`.
+
+#### 3. Set Up the Front-End
+1. Go to the front-end directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the front-end development server:
+   ```bash
+   npm start
+   ```
+   The front-end application will be running on `http://localhost:3000`.
 
 ---
 
@@ -66,40 +84,58 @@ The front-end integration is currently **in progress** and will be added in futu
 
 - **Base URL:** `http://localhost:3306`
 
-| HTTP Method | Endpoint       | Description              |
-|-------------|----------------|--------------------------|
-| `GET`       | `/tasks`       | Fetch all tasks          |
-| `POST`      | `/tasks`       | Create a new task        |
-| `PUT`       | `/tasks/:id`   | Update a specific task   |
-| `DELETE`    | `/tasks/:id`   | Delete a specific task   |
+| HTTP Method | Endpoint       | Description                  |
+|-------------|----------------|------------------------------|
+| `GET`       | `/tasks`       | Fetch all tasks              |
+| `POST`      | `/tasks`       | Create a new task            |
+| `PUT`       | `/tasks/:id`   | Update a specific task       |
+| `DELETE`    | `/tasks/:id`   | Delete a specific task       |
+
+---
+
+## 🛠 Front-End Structure
+
+- **Base URL for API:** `http://localhost:3306`
+- The front-end is built with **React**, and the main file is `src/pages/Home/index.jsx`, where tasks are displayed and managed.
 
 ---
 
 ## 🛠 Environment Variables
 
-Make sure the following variables are configured in your `.env` file:
+Make sure the following variables are configured in your `.env` files:
 
-- `PORT`: Port for the server (default: 3306).
+### Back-End `.env`
+- `PORT`: Port for the server (default: `3306`).
 - `MYSQL_HOST`: Host of the MySQL database (default: `localhost`).
 - `MYSQL_USER`: MySQL database username.
 - `MYSQL_PASSWORD`: MySQL database password.
-- `MYSQL_NAME`: Name of the MySQL database.
+- `MYSQL_NAME`: MySQL database name.
+
+### Front-End `.env` (optional, if you want to set up API URL separately)
+- `REACT_APP_API_URL`: URL for your back-end API (default: `http://localhost:3306`).
 
 ---
 
 ## 🚀 Current Status & Future Plans
 
-- **Current Status:**  
-  The back-end API is fully operational. You can manage tasks with the provided endpoints.
+### Current Status:
+- **Back-End**: Fully operational with endpoints for managing tasks.
+- **Front-End**: React application that allows interaction with the back-end, displaying tasks, and providing functionalities to add, edit, and delete tasks.
 
-- **Next Steps:**  
-  - Development of the front end using React.
-  - Integration of the front end with the API.
-  - Addition of advanced features like user authentication, deadlines, and reminders.
+### Next Steps:
+- **Back-End**: 
+  - Implement authentication (login/signup).
+  - Add task priority, deadlines, and reminders.
+- **Front-End**: 
+  - Improve UI/UX with advanced components and styling.
+  - Implement more user interactions (like sorting tasks).
+  - User authentication (if required in the future).
 
 ---
 
 ## 💡 Contributing
 
-Feel free to open issues or submit pull requests for improvements or new features. All contributions are welcome!  
-```  
+Feel free to open issues or submit pull requests for improvements or new features. All contributions are welcome!
+
+---
+
