@@ -70,6 +70,9 @@
  td {
     color: #333;
     font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    
  }
 
  tbody tr:nth-child(odd) {
